@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86F3A7E9-92E9-49ED-B802-0FDD5A74C3B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Eshoppy</RootNamespace>
+    <AssemblyName>Eshoppy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FinanceModule\BankList.cs" />
+    <Compile Include="FinanceModule\FinanceManager.cs" />
+    <Compile Include="FinanceModule\Interfaces\ICredit.cs" />
+    <Compile Include="FinanceModule\Interfaces\ICurrency.cs" />
+    <Compile Include="FinanceModule\Interfaces\IFinanceManager.cs" />
+    <Compile Include="FinanceModule\Models\AustralianDolarCurrency.cs" />
+    <Compile Include="FinanceModule\Models\Credit.cs" />
+    <Compile Include="FinanceModule\Interfaces\IAccount.cs" />
+    <Compile Include="FinanceModule\Interfaces\IBank.cs" />
+    <Compile Include="FinanceModule\Models\Account.cs" />
+    <Compile Include="FinanceModule\Models\Bank.cs" />
+    <Compile Include="FinanceModule\Models\Currency.cs" />
+    <Compile Include="FinanceModule\Models\DolarCurrency.cs" />
+    <Compile Include="FinanceModule\Models\DinarCurrency.cs" />
+    <Compile Include="FinanceModule\Models\EuroCurrency.cs" />
+    <Compile Include="FinanceModule\Models\KuwaitiDinarCurrency.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SalesModule\Interfaces\IOffer.cs" />
+    <Compile Include="SalesModule\Interfaces\IProduct.cs" />
+    <Compile Include="SalesModule\Interfaces\ISalesManager.cs" />
+    <Compile Include="SalesModule\Interfaces\ITransport.cs" />
+    <Compile Include="SalesModule\Logistics.cs" />
+    <Compile Include="SalesModule\Models\Offer.cs" />
+    <Compile Include="SalesModule\Models\Product.cs" />
+    <Compile Include="SalesModule\Models\Transport.cs" />
+    <Compile Include="SalesModule\SalesManager.cs" />
+    <Compile Include="TransactionModule\Interfaces\ITransaction.cs" />
+    <Compile Include="TransactionModule\Interfaces\ITransactionManager.cs" />
+    <Compile Include="TransactionModule\Interfaces\ITransactionType.cs" />
+    <Compile Include="TransactionModule\Models\InstalmentsTransactionType.cs" />
+    <Compile Include="TransactionModule\Models\Transaction.cs" />
+    <Compile Include="TransactionModule\Models\TransactionType.cs" />
+    <Compile Include="TransactionModule\Models\WithoutInstalmentsTransactionType.cs" />
+    <Compile Include="TransactionModule\TransactionList.cs" />
+    <Compile Include="TransactionModule\TransactionManager.cs" />
+    <Compile Include="UserModule\ClientManager.cs" />
+    <Compile Include="UserModule\Interfaces\IClient.cs" />
+    <Compile Include="UserModule\Interfaces\IClientManager.cs" />
+    <Compile Include="UserModule\Interfaces\IOrganization.cs" />
+    <Compile Include="UserModule\Interfaces\IUser.cs" />
+    <Compile Include="UserModule\Models\Organization.cs" />
+    <Compile Include="UserModule\Models\User.cs" />
+    <Compile Include="UserModule\ShoppingClient.cs" />
+    <Compile Include="Utils\Interfaces\IEmailSender.cs" />
+    <Compile Include="Utils\Interfaces\ILogger.cs" />
+    <Compile Include="Utils\Models\EmailSender.cs" />
+    <Compile Include="Utils\Models\Logger.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
